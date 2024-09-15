@@ -1,4 +1,4 @@
-<%= link_to "Home", "/", data: { e2e:"home_button"} %>
+<%= link_to "Home", "/" %>
 <h1>Login Form</h1>
 <%= @status %>
 <%= form_with url: sessions_path do |f| %>
@@ -13,13 +13,13 @@
   <% end %>
   <div>
     <%= f.label :email %><br>
-    <%= f.text_field :email, data: { e2e:"email_field"} %>
+    <%= f.text_field :email %>
   </div>
   <div>
     <%= f.label :password %><br>
-    <%= f.password_field :password, data: { e2e:"password_field"} %>
+    <%= f.password_field :password %>
   </div>
   <p>
-    <%= f.submit "Login", data: { e2e:"login_submit"} %>
+    <%= f.submit "Login" %>
   </p>
 <% end %>

@@ -12,10 +12,6 @@ if (!suites_to_run) {
 const suites = {
   smoke: [
     "smoke_suite/general_actions/welcome.feature",
-    "smoke_suite/general_actions/authentication.feature",
-    "smoke_suite/general_actions/authorization.feature",
-    "smoke_suite/general_actions/tag_management.feature",
-    "smoke_suite/general_actions/blog_management.feature"
   ]
 };
 

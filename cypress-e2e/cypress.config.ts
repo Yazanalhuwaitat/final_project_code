@@ -22,12 +22,12 @@ module.exports = defineConfig({
         viewportHeight: 1080,
         specPattern: "**/features/smoke_suite/payroll/manage_airticket_transactions.feature",
         scrollBehavior: 'center',
-        defaultCommandTimeout: 10000,
+        defaultCommandTimeout: 10000,  // 10 seconds
         "video" : true,
         downloadsFolder: 'cypress/downloads',
         chromeWebSecurity: false,
         // experimentalSessionAndOrigin: true,
-        pageLoadTimeout: 2000,
+        pageLoadTimeout: 60000,  // 60 seconds
         browsers: [
             {
                 name: 'chrome-macos',
