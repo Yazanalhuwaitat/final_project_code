@@ -31,4 +31,4 @@ tag_2=Tag.find_or_create_by!( id: 2, name: 'Professional' )
 
 
 blog_1.tags << Tag.find([1, 2])  
-blog_2.tags << Tag.find(2)       # blog 2 has Professional
+blog_2.tags << Tag.find(2)       
