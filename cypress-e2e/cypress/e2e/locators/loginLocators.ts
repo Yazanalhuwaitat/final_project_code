@@ -16,21 +16,21 @@ enum LoginLocators{
 
     //**************************** Tags management locators ******************************/
     NEW_TAG="[data-e2e='new_tag']",
-    NAME_TAG="[data-e2e='name-field']",
-    SUBMIT_TAG="[data-e2e='submit-button']",
+    NAME_TAG="[data-e2e='name_field']",
+    SUBMIT_TAG="[data-e2e='submit_tag_button']",
     DELETE_TAG="[data-e2e='delete_tag']",
-    TAGS_HEADER="[data-e2e='tags-header']",
-    NEW_BLOG="[data-e2e='new_blog']",
+    TAGS_HEADER="[data-e2e='tags_header']",
 
 
     //**************************** Blogs management locators ******************************/
+    NEW_BLOG="[data-e2e='new_blog']",
     BLOG_TITLE="[data-e2e='blog_title']",
     BLOG_BODY="[data-e2e='blog_body']",
     BLOG_CHECKBOX="[data-e2e='blog_tag_checkbox_1']",
     BLOG_CHECKBOX1="[data-e2e='blog_tag_checkbox_2']",
-    SUBMIT_BLOG="[data-e2e='submit_button']",
+    SUBMIT_BLOG="[data-e2e='submit_blog_button']",
     SHOW_BLOG="[data-e2e^='show-blog-']",
-    SHOW_BLOG_2="[data-e2e='show-blog-69']",
+    SHOW_BLOG_2="[data-e2e='show-blog-2']",
     EDIT_BLOG="[data-e2e='edit_blog']",
     DELETE_BLOG="[data-e2e='delete_blog']",
 

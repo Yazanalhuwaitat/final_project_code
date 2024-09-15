@@ -13,12 +13,12 @@
 
   <div>
     <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title ,data: { e2e: "blog_title" } %>
   </div>
 
   <div>
     <%= form.label :body, style: "display: block" %>
-    <%= form.text_field :body %>
+    <%= form.text_field :body ,data: { e2e: "blog_body" } %>
   </div>
 
   <div>
@@ -26,11 +26,16 @@
   </div>
 
   <div>
-    <%= form.label :tag_builder, style: "display: block" %>
-    <%= form.collection_check_boxes :tag_ids, Tag.all, :id, :name %>
-  </div>
+  <%= form.label :tag_builder, style: "display: block" %>
+  <%= form.collection_check_boxes :tag_ids, Tag.all, :id, :name do |b| %>
+    <div>
+      <%= b.check_box data: { e2e: "blog_tag_checkbox_#{b.value}" } %>
+      <%= b.label data: { e2e: "blog_tag_label_#{b.value}" } %>
+    </div>
+  <% end %>
+</div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Submit" ,data: { e2e: "submit_blog_button" }%>
   </div>
 <% end %>

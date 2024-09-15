@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^20.1.2",
+    "@mmisty/cypress-allure-adapter": "^3.1.0",
+    "cypress": "^13.14.2"
+  }
+}
