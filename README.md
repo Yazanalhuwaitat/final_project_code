@@ -45,4 +45,11 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+
+Steps to run the final project:
+
+1-yarn add typescript --dev
+2-rails db:migrate
+3-rails db:seed
+4-open local on the browser and run pending migrations
+5-run the test cases
