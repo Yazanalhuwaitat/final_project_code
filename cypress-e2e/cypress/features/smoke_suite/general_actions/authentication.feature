@@ -1,7 +1,5 @@
 Feature: Authentication
 
-
-
     Scenario: Successful login
         Given User navigates to public marketing page
         When user logged in as automation user
