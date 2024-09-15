@@ -1,5 +1,5 @@
 
-import {Given, Then} from "@badeball/cypress-cucumber-preprocessor";
+import {DataTable, Given, Then} from "@badeball/cypress-cucumber-preprocessor";
 import WelcomeLocators from "../../e2e/locators/WelcomeLocators";
 import WelcomePO from "../../e2e/pageobjects/WelcomePO";
 
@@ -10,3 +10,6 @@ Given("User navigates to public marketing page", () => {
 Then("I should see welcome message", () => {
     WelcomePO.getInstance().verifyWelcomeMessageExists()
 });
+
+
+

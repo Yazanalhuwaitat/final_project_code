@@ -6,7 +6,7 @@ let features_queue: string[] = [];
 
 function run(features: string[]) {
   console.log("list of features to run: ", features);
-  features.map((feature) => {
+  features.map(async (feature) => {
     runFeature(feature)
   })
 }

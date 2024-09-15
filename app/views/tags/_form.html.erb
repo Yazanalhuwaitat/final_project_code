@@ -13,10 +13,10 @@
 
   <div>
     <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, data: { e2e: "name-field" } %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Submit", data: { e2e: "submit-button" } %>
   </div>
 <% end %>
