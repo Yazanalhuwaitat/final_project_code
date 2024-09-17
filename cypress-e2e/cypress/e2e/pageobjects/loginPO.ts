@@ -95,7 +95,7 @@ class loginPO {
         cy.get(LoginLocators.SUBMIT_BLOG).click();
     }
 
-    public blogmissingtitle() {
+    public blogmissingbody() {
         cy.visit("http://localhost:3000/blogs");
         cy.get(LoginLocators.NEW_BLOG).click();
         cy.get(LoginLocators.BLOG_BODY).type("Yazan2k");
