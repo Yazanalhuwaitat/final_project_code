@@ -98,9 +98,9 @@ class loginPO {
     public blogmissingbody() {
         cy.visit("http://localhost:3000/blogs");
         cy.get(LoginLocators.NEW_BLOG).click();
-        cy.get(LoginLocators.BLOG_TITLE).type("Yazan2k");
+        cy.get(LoginLocators.BLOG_BODY).type("Yazan2k");
         cy.get(LoginLocators.SUBMIT_BLOG).click();
-        cy.contains("Body can't be blank").should('be.visible');
+        cy.contains("Title can't be blank").should('be.visible');
     }
 
     public editblog() {
