@@ -2,10 +2,24 @@ Feature: Authentication
 
     Scenario: Successful login
         Given User navigates to public marketing page
-        When user logged in as automation user with email "admin@zenhr.com" and password "password"
+        Then navigate to login page
+        Then user enter email "admin@zenhr.com"
+        Then user enter password "password"
+        Then user click login
         Then user check the success case
+
+    #Then user logged in as automation user with email "admin@zenhr.com" and password "password"
+    #Then user check the success case
 
     Scenario: Failed login
         Given User navigates to public marketing page
-        When user logged in as failed user with email "admin@zenhr.com" and password "pasrthert"
+        Then navigate to login page
+        Then user enter email "admin@zenhr.com"
+        Then user enter password "pasrthert"
+        Then user click login
+        Then user logged in as failed user
+
+
+# Given User navigates to public marketing page
+# When user logged in as failed user with email "admin@zenhr.com" and password "pasrthert"
 

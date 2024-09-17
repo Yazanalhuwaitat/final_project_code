@@ -15,13 +15,32 @@ class loginPO {
 
     //**************************** Login / Authentication/ Authorization ******************************/
 
-    public userLogin(data: LoginModel) {
+
+    public loginpage(){
         cy.get(LoginLocators.LOGIN_BUTTON).click()
-        cy.sendTextToElement(LoginLocators.EMAIL_FIELD, data.email);
-        cy.sendTextToElement(LoginLocators.PASSWORD_FIELD, data.password);
-        cy.get(LoginLocators.LOGIN_SUBMIT).click();
-        cy.wait(500);
+        cy.url().should('eq', 'http://localhost:3000/sessions/new');
     }
+
+    public fillemail(email:string){
+        cy.sendTextToElement(LoginLocators.EMAIL_FIELD, email);
+    }
+
+
+    public fillpassword(password:string){
+        cy.sendTextToElement(LoginLocators.PASSWORD_FIELD,password);
+    }
+
+    public loginbutton(){
+        cy.get(LoginLocators.LOGIN_SUBMIT).click();
+        cy.wait(2000);
+    }
+    // public userLogin(data: LoginModel) {
+    //     cy.get(LoginLocators.LOGIN_BUTTON).click()
+    //     cy.sendTextToElement(LoginLocators.EMAIL_FIELD, data.email);
+    //     cy.sendTextToElement(LoginLocators.PASSWORD_FIELD, data.password);
+    //     cy.get(LoginLocators.LOGIN_SUBMIT).click();
+    //     cy.wait(500);
+    // }
 
     public successLogin() {
         cy.contains("Login Successful");
@@ -104,16 +123,17 @@ class loginPO {
         cy.contains("Title can't be blank").should('be.visible');
     }
 
-    public editblog() {
+
+    public createeditblog(){
         cy.visit("http://localhost:3000/blogs");
         cy.get(LoginLocators.NEW_BLOG).click();
         cy.get(LoginLocators.BLOG_TITLE).type("Test title");
         cy.get(LoginLocators.BLOG_BODY).type("Test body");
         cy.get(LoginLocators.BLOG_CHECKBOX1).click();
         cy.get(LoginLocators.SUBMIT_BLOG).click();
-        cy.wait(2000)
-        cy.visit("http://localhost:3000/blogs");
-        cy.get(LoginLocators.SHOW_BLOG).last().click();
+    }
+
+    public editblog() {
         cy.get(LoginLocators.EDIT_BLOG).click()
         cy.get(LoginLocators.BLOG_TITLE).type("Test title edited");
         cy.get(LoginLocators.BLOG_BODY).type("Test body edited");
