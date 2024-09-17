@@ -16,7 +16,7 @@ Given("user logged in as automation user", () => {
 });
 
 Then("user check the success case", () => {
-    LoginPO.getInstance().successLogin
+    LoginPO.getInstance().successLogin()
 });
 
 Then("user logged in as failed user", () => {
