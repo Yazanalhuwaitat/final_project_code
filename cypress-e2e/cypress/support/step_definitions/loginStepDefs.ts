@@ -7,40 +7,40 @@ import LoginPO from "../../e2e/pageobjects/loginPO";
 
 //**************************** Login / Authentication/ Authorization ******************************/
 
-Given("user logged in as automation user", () => {
+Given("user logged in as automation user with email {string} and password {string}", (email: string, password: string) => {
     const loginData: LoginModel = {
-        email: "admin@zenhr.com",
-        password: "password"
+        email: email,
+        password: password
     };
     LoginPO.getInstance().userLogin(loginData);
 });
 
 Then("user check the success case", () => {
-    LoginPO.getInstance().successLogin
+    LoginPO.getInstance().successLogin();
 });
 
-Then("user logged in as failed user", () => {
+Then("user logged in as failed user with email {string} and password {string}", (email: string, password: string) => {
     const loginData: LoginModel = {
-        email: "admin@zenhr.com",
-        password: "pasrthert"
+        email: email,
+        password: password
     };
     LoginPO.getInstance().userLogin(loginData);
     LoginPO.getInstance().failLogin()
 });
 
-Then("user check the admin access", () => {
+Then("user check the admin access with email {string} and password {string}", (email: string, password: string) => {
     const loginData: LoginModel = {
-        email: "admin@zenhr.com",
-        password: "password"
+        email: email,
+        password: password
     };
     LoginPO.getInstance().userLogin(loginData);
     LoginPO.getInstance().adminaccess();
 })
 
-Then("user check the member access", () => {
+Then("user check the member access with email {string} and password {string}", (email: string, password: string) => {
     const loginData: LoginModel = {
-        email: "user_1@zenhr.com",
-        password: "password"
+        email: email,
+        password: password
     };
     LoginPO.getInstance().userLogin(loginData);
     LoginPO.getInstance().memberaccess();
@@ -50,28 +50,28 @@ Then("user check the member access", () => {
 
 //**************************** Tag management ******************************/
 
-Then("user check the tag list", () => {
+Then("user check the tag list with email {string} and password {string}", (email: string, password: string) => {
     const loginData: LoginModel = {
-        email: "admin@zenhr.com",
-        password: "password"
+        email: email,
+        password: password
     };
     LoginPO.getInstance().userLogin(loginData);
     LoginPO.getInstance().taglist();
 })
 
-Then("user check the tag creation", () => {
+Then("user check the tag creation with email {string} and password {string}", (email: string, password: string) => {
     const loginData: LoginModel = {
-        email: "admin@zenhr.com",
-        password: "password"
+        email: email,
+        password: password
     };
     LoginPO.getInstance().userLogin(loginData);
     LoginPO.getInstance().tagcreate();
 })
 
-Then("user check the tag creation duplicate", () => {
+Then("user check the tag creation duplicate with email {string} and password {string}", (email: string, password: string) => {
     const loginData: LoginModel = {
-        email: "admin@zenhr.com",
-        password: "password"
+        email: email,
+        password: password
     };
     LoginPO.getInstance().userLogin(loginData);
     LoginPO.getInstance().tagduplicate();
@@ -81,64 +81,64 @@ Then("user check the tag creation duplicate", () => {
 
 //**************************** Blog management ******************************/
 
-Then("user create a new blog", () => {
+Then("user create a new blog with email {string} and password {string}", (email: string, password: string) => {
     const loginData: LoginModel = {
-        email: "user_1@zenhr.com",
-        password: "password"
+        email: email,
+        password: password
     };
     LoginPO.getInstance().userLogin(loginData);
     LoginPO.getInstance().blogcreate();
 })
 
-Then("user 2 create a new blog", () => {
+Then("user 2 create a new blog with email {string} and password {string}", (email: string, password: string) => {
     const loginData: LoginModel = {
-        email: "user_2@zenhr.com",
-        password: "password"
+        email: email,
+        password: password
     };
     LoginPO.getInstance().userLogin(loginData);
     LoginPO.getInstance().blogcreate1();
 })
 
-Then("user create a new blog without body", () => {
+Then("user create a new blog without body with email {string} and password {string}", (email: string, password: string) => {
     const loginData: LoginModel = {
-        email: "user_1@zenhr.com",
-        password: "password"
+        email: email,
+        password: password
     };
     LoginPO.getInstance().userLogin(loginData);
     LoginPO.getInstance().blogmissingtitle();
 })
 
-Then("user edit a blog", () => {
+Then("user edit a blog with email {string} and password {string}", (email: string, password: string) => {
     const loginData: LoginModel = {
-        email: "user_1@zenhr.com",
-        password: "password"
+        email: email,
+        password: password
     };
     LoginPO.getInstance().userLogin(loginData);
     LoginPO.getInstance().editblog();
 })
 
-Then("user cannot edit a blog not belongs to him", () => {
+Then("user cannot edit a blog not belongs to him with email {string} and password {string}", (email: string, password: string) => {
     const loginData: LoginModel = {
-        email: "user_1@zenhr.com",
-        password: "password"
+        email: email,
+        password: password
     };
     LoginPO.getInstance().userLogin(loginData);
     LoginPO.getInstance().faileditblog();
 })
 
-Then("user delete the last blog", () => {
+Then("user delete the last blog with email {string} and password {string}", (email: string, password: string) => {
     const loginData: LoginModel = {
-        email: "user_1@zenhr.com",
-        password: "password"
+        email: email,
+        password: password
     };
     LoginPO.getInstance().userLogin(loginData);
     LoginPO.getInstance().destroyblog();
 })
 
-Then("user cannot delete a blog not belongs to him", () => {
+Then("user cannot delete a blog not belongs to him with email {string} and password {string}", (email: string, password: string) => {
     const loginData: LoginModel = {
-        email: "user_1@zenhr.com",
-        password: "password"
+        email: email,
+        password: password
     };
     LoginPO.getInstance().userLogin(loginData);
     LoginPO.getInstance().faildeleteblog();
