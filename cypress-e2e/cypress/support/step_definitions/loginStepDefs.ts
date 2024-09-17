@@ -105,7 +105,7 @@ Then("user create a new blog without body", () => {
         password: "password"
     };
     LoginPO.getInstance().userLogin(loginData);
-    LoginPO.getInstance().blogmissingbody();
+    LoginPO.getInstance().blogmissingtitle();
 })
 
 Then("user edit a blog", () => {
