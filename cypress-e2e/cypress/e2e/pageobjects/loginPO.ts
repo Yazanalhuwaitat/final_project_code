@@ -84,6 +84,7 @@ class loginPO {
         cy.get(LoginLocators.BLOG_BODY).type("Test body");
         cy.get(LoginLocators.BLOG_CHECKBOX).click();
         cy.get(LoginLocators.SUBMIT_BLOG).click();
+        cy.contains("Blog was successfully created.")
     }
 
     public blogcreate1() {
