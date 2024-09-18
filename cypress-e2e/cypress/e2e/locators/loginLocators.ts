@@ -11,7 +11,8 @@ enum LoginLocators{
 
     //**************************** Dashboard page locators ******************************/
     MANAGE_TAGS = "[data-e2e='manage_tags_button']",
-    BLOG_BUTTON = "[data-e2e='blogs_button_main']",
+    BLOGS_DASHBOARD="[data-e2e='blogs_button_main']",
+
 
 
     //**************************** Tags management locators ******************************/
@@ -23,7 +24,6 @@ enum LoginLocators{
 
 
     //**************************** Blogs management locators ******************************/
-    BLOGS_DASHBOARD="[data-e2e='blogs_button_main']",
     NEW_BLOG="[data-e2e='new_blog']",
     BLOG_TITLE="[data-e2e='blog_title']",
     BLOG_BODY="[data-e2e='blog_body']",

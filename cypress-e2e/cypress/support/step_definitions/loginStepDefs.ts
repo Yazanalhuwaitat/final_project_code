@@ -42,7 +42,6 @@ Then("user check the member access", () => {
 });
 
 
-
 //**************************** Blog management ******************************/
 
 Then("user click on blogs", () => {
@@ -92,34 +91,26 @@ Then("user cannot delete a blog not belongs to him", () => {
 
 // //**************************** Tag management ******************************/
 
-// Then("user check the tag list with email {string} and password {string}", (email: string, password: string) => {
-//     const loginData: LoginModel = {
-//         email: email,
-//         password: password
-//     };
-//     LoginPO.getInstance().userLogin(loginData);
-//     LoginPO.getInstance().taglist();
-// })
+Then("user click on manage tags", () => {
+    LoginPO.getInstance().managetags()
+});
 
-// Then("user check the tag creation with email {string} and password {string}", (email: string, password: string) => {
-//     const loginData: LoginModel = {
-//         email: email,
-//         password: password
-//     };
-//     LoginPO.getInstance().userLogin(loginData);
-//     LoginPO.getInstance().tagcreate();
-// })
+Then("user check the tag list", () => {
+    LoginPO.getInstance().taglist()
+});
 
-// Then("user check the tag creation duplicate with email {string} and password {string}", (email: string, password: string) => {
-//     const loginData: LoginModel = {
-//         email: email,
-//         password: password
-//     };
-//     LoginPO.getInstance().userLogin(loginData);
-//     LoginPO.getInstance().tagduplicate();
-// })
+Then("user create a new tag", () => {
+    LoginPO.getInstance().tagcreate()
+});
 
+Then("user check the tag creation and delete it", () => {
+    LoginPO.getInstance().tagcreatecheck()
+});
 
+Then("user enter name not valid for the tag", () => {
+    LoginPO.getInstance().tagduplicate()
+});
 
-
-
+Then("user check the tag duplicate validation", () => {
+    LoginPO.getInstance().tagduplicatevalidation()
+});

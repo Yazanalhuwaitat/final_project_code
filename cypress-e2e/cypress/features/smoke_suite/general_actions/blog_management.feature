@@ -67,4 +67,3 @@ Feature: Blog Management
         Then user click login
         Then user click on blogs
         Then user cannot delete a blog not belongs to him
-

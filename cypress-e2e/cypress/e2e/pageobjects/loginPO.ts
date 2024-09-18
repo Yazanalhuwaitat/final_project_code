@@ -60,30 +60,38 @@ class loginPO {
 
 
     //**************************** Tag management ******************************/
+    public managetags() {
+        cy.get(LoginLocators.MANAGE_TAGS).click();
+        cy.url().should('eq', 'http://localhost:3000/tags');
+    }
+    
     public taglist() {
-        cy.visit("http://localhost:3000/tags");
         cy.wait(2000);
         cy.contains("Funny").should('be.visible');
         cy.contains("Professional").should('be.visible');
     }
 
     public tagcreate() {
-        cy.visit("http://localhost:3000/tags");
         cy.wait(2000);
         cy.get(LoginLocators.NEW_TAG).click();
         cy.get(LoginLocators.NAME_TAG).type('Test tag');  // The first time it will type "Test tag 1"
         cy.get(LoginLocators.SUBMIT_TAG).click();
+    }
+
+    public tagcreatecheck() {
         cy.contains("Tag was successfully created.").should('be.visible');
         cy.wait(1000)
         cy.get(LoginLocators.DELETE_TAG).click()
     }
 
     public tagduplicate() {
-        cy.visit("http://localhost:3000/tags");
         cy.wait(2000);
         cy.get(LoginLocators.NEW_TAG).click();
         cy.get(LoginLocators.NAME_TAG).type("Funny");
         cy.get(LoginLocators.SUBMIT_TAG).click();
+    }
+
+    public tagduplicatevalidation() {
         cy.contains("Name has already been taken").should('be.visible');
     }
 
