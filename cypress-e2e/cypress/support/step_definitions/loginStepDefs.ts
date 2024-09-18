@@ -26,6 +26,7 @@ Then("user click login", ()=>{
 
 Then("user check the success case", () => {
     LoginPO.getInstance().successLogin();
+    LoginPO.getInstance().successLogin();
 });
 
 Then("user logged in as failed user", () => {
