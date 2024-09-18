@@ -34,13 +34,6 @@ class loginPO {
         cy.get(LoginLocators.LOGIN_SUBMIT).click();
         cy.wait(2000);
     }
-    // public userLogin(data: LoginModel) {
-    //     cy.get(LoginLocators.LOGIN_BUTTON).click()
-    //     cy.sendTextToElement(LoginLocators.EMAIL_FIELD, data.email);
-    //     cy.sendTextToElement(LoginLocators.PASSWORD_FIELD, data.password);
-    //     cy.get(LoginLocators.LOGIN_SUBMIT).click();
-    //     cy.wait(500);
-    // }
 
     public successLogin() {
         cy.contains("Login Successful");
@@ -96,36 +89,35 @@ class loginPO {
 
 
     //**************************** Blog management ******************************/
-    public blogcreate() {
-        cy.visit("http://localhost:3000/blogs");
+    
+    public blogbutton(){
+        cy.get(LoginLocators.BLOGS_DASHBOARD).click()
+        cy.url().should('eq', 'http://localhost:3000/blogs');
+    }
+    
+    public blogcreate(){
         cy.get(LoginLocators.NEW_BLOG).click();
         cy.get(LoginLocators.BLOG_TITLE).type("Yazan2k");
         cy.get(LoginLocators.BLOG_BODY).type("Test body");
         cy.get(LoginLocators.BLOG_CHECKBOX).click();
         cy.get(LoginLocators.SUBMIT_BLOG).click();
+    }
+
+    public blogcreatesuccess(){
         cy.contains("Blog was successfully created.")
     }
-
-    public blogcreate1() {
-        cy.visit("http://localhost:3000/blogs");
-        cy.get(LoginLocators.NEW_BLOG).click();
-        cy.get(LoginLocators.BLOG_TITLE).type("Yazan2k");
-        cy.get(LoginLocators.BLOG_BODY).type("Test body");
-        cy.get(LoginLocators.BLOG_CHECKBOX1).click();
-        cy.get(LoginLocators.SUBMIT_BLOG).click();
-    }
-
+    
     public blogmissingtitle() {
-        cy.visit("http://localhost:3000/blogs");
         cy.get(LoginLocators.NEW_BLOG).click();
         cy.get(LoginLocators.BLOG_BODY).type("Yazan2k");
         cy.get(LoginLocators.SUBMIT_BLOG).click();
-        cy.contains("Title can't be blank").should('be.visible');
     }
 
-
+    public blogmissingtitlevalidation(){
+        cy.contains("Title can't be blank").should('be.visible');
+    }
+    
     public createeditblog(){
-        cy.visit("http://localhost:3000/blogs");
         cy.get(LoginLocators.NEW_BLOG).click();
         cy.get(LoginLocators.BLOG_TITLE).type("Test title");
         cy.get(LoginLocators.BLOG_BODY).type("Test body");
@@ -143,23 +135,24 @@ class loginPO {
     }
 
     public faileditblog() {
-        cy.visit("http://localhost:3000/blogs");
         cy.get(LoginLocators.SHOW_BLOG_2).click();
         cy.get(LoginLocators.EDIT_BLOG).should('not.exist');
     }
 
     public destroyblog() {
-        cy.visit("http://localhost:3000/blogs");
         cy.get(LoginLocators.SHOW_BLOG).last().click();
         cy.get(LoginLocators.DELETE_BLOG).click();
         cy.wait(2000)
+    }
+
+    public destroyblogcheck() {
         cy.contains("Blog was successfully destroyed.")
     }
 
     public faildeleteblog() {
-        cy.visit("http://localhost:3000/blogs");
         cy.get(LoginLocators.SHOW_BLOG_2).click();
         cy.get(LoginLocators.DELETE_BLOG).should('not.exist');
     }
+
 }
 export default loginPO;
